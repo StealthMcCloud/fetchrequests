@@ -1,12 +1,19 @@
 //mythology 680
 //The Movies 309
 
+let newDiv = document.createElement("div")
+
 fetch("http://jservice.io/api/category?id=680")
     .then(res => res.json())
     .then(data => {
         let titleElement = data.title
         let cluesElement = data.clues[Math.floor(Math.random() * data.clues.length)]
-        document.write("Category: " + titleElement, "Question: " + cluesElement.question)
+
+        let message = "Category: " + titleElement + " Question: " + cluesElement.question + "."
+        let newMessage = document.createTextNode(message)
+        let newDiv = document.createElement("div")
+        newDiv.appendChild(newMessage)
+        document.body.appendChild(newDiv)
     })
 
     async function questionTwo () {
@@ -15,6 +22,13 @@ fetch("http://jservice.io/api/category?id=680")
 
         let titleElement = data.title
         let cluesElement = data.clues[Math.floor(Math.random() * data.clues.length)]
-        document.write("Category: " + titleElement, "Question: " + cluesElement.question)
+
+        let message = "Category: " + titleElement + " Question: " + cluesElement.question + "."
+        let newMessage = document.createTextNode(message)
+        let newDiv = document.createElement("div")
+        newDiv.appendChild(newMessage)
+        document.body.appendChild(newDiv)
+
+
     }
     questionTwo()
